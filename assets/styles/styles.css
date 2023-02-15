@@ -1,5 +1,121 @@
+.root {
+    --custom-pink: rgb(217,3,104);
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    font-size: 3em;
+}
+
+/* ////////////////////SECCIÓN 1//////////////////// */
+.btn-control{
+    border-style: none;
+    background-color: unset;
+    font-size: 4em;
+}
+
+/* ////////////////////SECCIÓN 2//////////////////// */
+.seccion2{
+    min-height: 80px;
+    background-color:rgb(217,3,104);
+}
+
+/* ////////////////////SECCIÓN 3//////////////////// */
+.seccion3{
+    min-height: calc(100vh - 277px);
+}
+
+/* ////////////////////SECCIÓN 4 (FOOTER)//////////////////// */
+.seccion4{
+    padding: 20px 30px 20px 30px;
+    background-color:rgb(217,3,104);
+}
+
+.social-icon-container{
+    width: 15vw;
+    min-width: 220px;
+}
+
+.social-icon{
+    width: 50px;
+}
+
+.cohort{
+    font-size: 2em;
+}
+
+.nav-link{
+    color: rgb(217,3,104);
+}
+
+.nav-link:hover{
+    color: white;
+    background-color: rgb(217,3,104);
+}
+
+
+/* ////////////ESTILO PARA PANTALLAS MEDIANAS O GRANDES//////////// */
+@media (min-width: 768px) {
+    /* ////////////////////SECCIÓN 1//////////////////// */
+    .seccion1{
+        height: 100px;
+        background-color:gainsboro;
+    }
+
+    .navbar{
+        padding: 0;
+    }
+
+    .nav-logo{
+        width: 100%;
+        min-width: 100px;
+        max-width: 200px;
+        flex-shrink: 0;
+    }
+
+    .nav-link{
+        color: white;
+        background: rgb(217,3,104);
+        font-size: 1em;
+        border: 2px solid rgb(217,3,104);
+        padding: 14px 3px 14px 3px;
+        text-align: center;
+        transition: all .32s cubic-bezier(0, 0.55, 0.45, 1);
+        height:52px;
+        width: 12.4vw;
+        min-width: 96px;
+        max-width: 140px;
+        will-change: transform;
+    }
+    
+    .nav-link:hover{
+        color: white;
+        transform: scale(1.1);
+        background: rgb(217,3,104);
+      }
+
+    .nav-options-container{
+        display: flex;
+        justify-content:end;
+    }
+
+    .nav-options{
+        width: 100%;
+        max-width: 750px;
+        display: flex;
+        justify-content: space-evenly;   
+    }
+
+    /* ////////////////////SECCIÓN 3//////////////////// */
+    .seccion3{
+        min-height: calc(100vh - 318px);
+    }
+
+
 }
