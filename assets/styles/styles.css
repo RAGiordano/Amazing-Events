@@ -1,7 +1,3 @@
-.root {
-    --custom-pink: rgb(217,3,104);
-}
-
 *{
     margin: 0;
     padding: 0;
@@ -20,6 +16,10 @@ h1{
     font-size: 4em;
 }
 
+.nav-logo{
+    width: 120px;
+}
+
 /* ////////////////////SECCIÓN 2//////////////////// */
 .seccion2{
     min-height: 80px;
@@ -33,7 +33,7 @@ h1{
 
 /* ////////////////////SECCIÓN 4 (FOOTER)//////////////////// */
 .seccion4{
-    padding: 20px 30px 20px 30px;
+    padding: 20px 30px;
     background-color:rgb(217,3,104);
 }
 
