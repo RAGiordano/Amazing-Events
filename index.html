@@ -16,7 +16,7 @@
   <header>
     <!--//////////////////// PRIMERA BARRA DE NAVEGACIÓN ////////////////////-->
     <nav class="navbar navbar-expand-md bg-body-tertiary">
-      <div class="container-fluid seccion1">
+      <div class="container-fluid section1">
         <a class="navbar-brand" href="#">
           <img class="nav-logo d-inline-block align-text-top" src="./assets/img/Logo_Amazing_Events.png"
             alt="Logo Amazing Events">
@@ -28,21 +28,22 @@
         <div class="collapse navbar-collapse nav-options-container" id="navbarNav">
           <ul class="navbar-nav nav-options">
             <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center align-items-center" aria-current="page" href="#">Home</a>
+              <a class="nav-link d-flex justify-content-center align-items-center" aria-current="page"
+                href="./index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex justify-content-center align-items-center"
                 href="./upcoming_events.html">Upcoming Events</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center align-items-center"
-                href="./past_events.html">Past Events</a>
+              <a class="nav-link d-flex justify-content-center align-items-center" href="./past_events.html">Past
+                Events</a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex justify-content-center align-items-center" href="./contact.html">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center align-items-center" href="./stats.html">Status</a>
+              <a class="nav-link d-flex justify-content-center align-items-center" href="./stats.html">Stats</a>
             </li>
           </ul>
         </div>
@@ -50,35 +51,112 @@
     </nav>
 
     <!--//////////////////// SEGUNDA BARRA DE NAVEGACIÓN ////////////////////-->
-    <div class="seccion2 d-flex justify-content-between align-items-center p-3">
-      <a href="./stats.html"><!-- BOTÓN ANTERIOR -->
-        <button class="btn-control">
-          <span class="text-white">&lt;</span>
-        </button>
+    <div class="section2 d-flex justify-content-between align-items-center p-3">
+      <a class="btn-control" href="./stats.html"><!-- BOTÓN ANTERIOR -->
+        <span class="text-white">&lt;</span>
       </a>
-
       <div>
         <h1><b class="text-white">Home</b></h1><!-- TÍTULO PRINCIPAL -->
       </div>
-      <a href="./upcoming_events.html"><!-- BOTÓN SIGUIENTE -->
-        <button class="btn-control ">
-          <span class="text-white">></span>
-        </button>
+      <a class="btn-control" href="./upcoming_events.html"><!-- BOTÓN SIGUIENTE -->
+        <span class="text-white">></span>
       </a>
-
     </div>
   </header>
 
 
   <!--//////////////////// CUERPO PRINCIPAL ////////////////////-->
-  <main class="seccion3">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto numquam, saepe, porro nobis expedita corporis ipsum nesciunt odit neque alias dignissimos? Error saepe fugit delectus aliquam. Earum odio deleniti aliquid.</p>
+  <main class="section3 d-flex justify-content-center align-items-center">
+    <div class="section3-container  p-0">
+
+      <div class="form-container mx-2">
+        <form action="./action_home_form.html" method="get">
+          <div class="form-sections-container d-flex justify-content-evenly flex-wrap">
+            <div class="d-flex justify-content-evenly flex-wrap align-items-center"><!-- CHECK BOXES -->
+              <label class="mx-3 my-3"><input type="checkbox" id="cat1" name="cat1" value="true"> Category 1</label>
+              <label class="mx-3 my-3"><input type="checkbox" id="cat2" name="cat2" value="true"> Category 2</label>
+              <label class="mx-3 my-3"><input type="checkbox" id="cat3" name="cat3" value="true"> Category 3</label>
+              <label class="mx-3 my-3"><input type="checkbox" id="cat4" name="cat4" value="true"> Category 4</label>
+              <label class="mx-3 my-3"><input type="checkbox" id="cat5" name="cat5" value="true"> Category 5</label>
+            </div>
+            <div class="my-4 d-flex align-items-center search-group"><!-- SEARCH -->
+              <div class="input-group" id="div-src">
+                <input type="text" id="input-src" class="form-control">
+                <span class="input-group-btn p-0" id="btn-src">
+                  <button class="btn btn-default p-0 m-0" type="button">
+                    <img src="./assets/img/search_icon.png" class="m-0 p-0 search-btn-img" alt="Search">
+                  </button>
+                </span>
+              </div>
+            </div>
+          </div>
+          
+        </form>
+      </div>
+
+      <div class="cards-container d-flex justify-content-evenly py-3"><!-- CONTENEDOR DE TARJETAS -->
+        
+        <div class="card text-center d-flex justify-content-center">
+          <div class="card-img-container"><!-- IMAGEN -->
+            <img src="./assets/img/Cinema.jpg" class="card-img-top object-fit-cover card-img" alt="Cinema">  
+          </div>
+          <div class="card-body"><!-- INFORMACIÓN -->
+            <h2 class="card-title">Título</h2>
+            <p class="card-text">Texto descriptivo</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span>Price: $ 0000</span><a href="./details.html" class="btn btn-card">ver más...</a><!-- BOTÓN -->
+            </div>
+          </div>
+        </div>
+
+        <div class="card text-center d-flex justify-content-center">
+          <div class="card-img-container"><!-- IMAGEN -->
+            <img src="./assets/img/Music_Concert.jpg" class="card-img-top object-fit-cover card-img" alt="Music concert">  
+          </div>
+          <div class="card-body"><!-- INFORMACIÓN -->
+            <h2 class="card-title">Título</h2>
+            <p class="card-text">Texto descriptivo</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span>Price: $ 0000</span><a href="./details.html" class="btn btn-card">ver más...</a><!-- BOTÓN -->
+            </div>
+          </div>
+        </div>
+
+        <div class="card text-center d-flex justify-content-center">
+          <div class="card-img-container"><!-- IMAGEN -->
+            <img src="./assets/img/Marathon.jpg" class="card-img-top object-fit-cover card-img" alt="Maratohn">  
+          </div>
+          <div class="card-body"><!-- INFORMACIÓN -->
+            <h2 class="card-title">Título</h2>
+            <p class="card-text">Texto descriptivo</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span>Price: $ 0000</span><a href="./details.html" class="btn btn-card">ver más...</a><!-- BOTÓN -->
+            </div>
+          </div>
+        </div>
+
+        <div class="card text-center d-flex justify-content-center">
+          <div class="card-img-container"><!-- IMAGEN -->
+            <img src="./assets/img/Museum_Tour.jpg" class="card-img-top object-fit-cover card-img" alt="Museum tour">  
+          </div>
+          <div class="card-body"><!-- INFORMACIÓN -->
+            <h2 class="card-title">Título</h2>
+            <p class="card-text">Texto descriptivo</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span>Price: $ 0000</span><a href="./details.html" class="btn btn-card">ver más...</a><!-- BOTÓN -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
   </main>
 
 
   <!--//////////////////// FOOTER ////////////////////-->
-  <footer class="seccion4 d-flex justify-content-between">
-    <div class="d-flex justify-content-evenly social-icon-container">
+  <footer class="section4 d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-evenly align-items-center social-icon-container">
       <div class="social-icon"><a href="https://www.instagram.com" title="Instagram"><img class="icon w-100"
             src="./assets/img/instagram.png" alt="Instagram link"></a></div>
       <div class="social-icon"><a href="https://www.facebook.com" title="Facebook"><img class="icon w-100"
@@ -87,7 +165,7 @@
             src="./assets/img/whatsapp.png" alt="WhatsApp link"></a></div>
     </div>
 
-    <div class="cohort text-white">FE04-TN</div>
+    <div class="cohort text-white mx-3 d-flex align-items-center">FE04-TN</div>
   </footer>
 
   <!--//////////////////// SCRIPTS ////////////////////-->

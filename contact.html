@@ -14,9 +14,9 @@
 
 <body>
   <header>
-    <!--//////////////////// PRIMERA BARRA DE NAVEGACION ////////////////////-->
+    <!--//////////////////// PRIMERA BARRA DE NAVEGACIÓN ////////////////////-->
     <nav class="navbar navbar-expand-md bg-body-tertiary">
-      <div class="container-fluid seccion1">
+      <div class="container-fluid section1">
         <a class="navbar-brand" href="#">
           <img class="nav-logo d-inline-block align-text-top" src="./assets/img/Logo_Amazing_Events.png"
             alt="Logo Amazing Events">
@@ -42,28 +42,28 @@
               <a class="nav-link d-flex justify-content-center align-items-center" href="./contact.html">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center align-items-center" href="./stats.html">Status</a>
+              <a class="nav-link d-flex justify-content-center align-items-center" href="./stats.html">Stats</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!--//////////////////// SEGUNDA BARRA DE NAVEGACION ////////////////////-->
-    <div class="seccion2 d-flex justify-content-between align-items-center p-3">
-      <a href="./past_events.html"><!-- BOTON ANTERIOR -->
-        <button class="btn-control">
+    <!--//////////////////// SEGUNDA BARRA DE NAVEGACIÓN ////////////////////-->
+    <div class="section2 d-flex justify-content-between align-items-center p-3">
+      <a class="btn-control" href="./past_events.html"><!-- BOTÓN ANTERIOR -->
+        
           <span class="text-white">&lt;</span>
-        </button>
+        
       </a>
 
       <div>
-        <h1><b class="text-white">Contact</b></h1><!-- TITULO PRINCIPAL -->
+        <h1><b class="text-white">Contact us</b></h1><!-- TÍTULO PRINCIPAL -->
       </div>
-      <a href="./stats.html"><!-- BOTON SIGUIENTE -->
-        <button class="btn-control ">
+      <a class="btn-control" href="./stats.html"><!-- BOTÓN SIGUIENTE -->
+        
           <span class="text-white">></span>
-        </button>
+        
       </a>
 
     </div>
@@ -71,13 +71,24 @@
 
 
   <!--//////////////////// CUERPO PRINCIPAL ////////////////////-->
-  <main class="seccion3">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto numquam, saepe, porro nobis expedita corporis ipsum nesciunt odit neque alias dignissimos? Error saepe fugit delectus aliquam. Earum odio deleniti aliquid.</p>
+  <main class="section3 d-flex align-items-top justify-content-center">
+    <div class="form-container mt-5 mb-3">
+      <form action="./action_contact_form.html" method="get">
+          <label class="my-2">Name: <br><input type="text" name="name" id="name" size="41"></label><br>
+          <label class="my-2">Email: <br><input type="text" name="email" id="email" size="41"></label><br>
+          <label class="my-2">Mesagge: <br><textarea name="message" id="message" cols="45" rows="10" ></textarea></label>
+            
+          <div class="d-flex justify-content-end">
+            <input class="button submit-button my-2" type="submit" value="submit">
+          </div>
+      </form>
+    </div>
+    
   </main>
 
 
   <!--//////////////////// FOOTER ////////////////////-->
-  <footer class="seccion4 d-flex justify-content-between">
+  <footer class="section4 d-flex justify-content-between">
     <div class="d-flex justify-content-evenly social-icon-container">
       <div class="social-icon"><a href="https://www.instagram.com" title="Instagram"><img class="icon w-100"
             src="./assets/img/instagram.png" alt="Instagram link"></a></div>
@@ -87,7 +98,7 @@
             src="./assets/img/whatsapp.png" alt="WhatsApp link"></a></div>
     </div>
 
-    <div class="cohort text-white">FE04-TN</div>
+    <div class="cohort text-white mx-3 d-flex align-items-center">FE04-TN</div>
   </footer>
 
   <!--//////////////////// SCRIPTS ////////////////////-->

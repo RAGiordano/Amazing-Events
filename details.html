@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amazing Events - Home</title>
+  <title>Amazing Events - Details</title>
   <link rel="shortcut icon" href="./assets/img/Logo_Amazing_Events.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -14,9 +14,9 @@
 
 <body>
   <header>
-    <!--//////////////////// PRIMERA BARRA DE NAVEGACION ////////////////////-->
+    <!--//////////////////// PRIMERA BARRA DE NAVEGACIÓN ////////////////////-->
     <nav class="navbar navbar-expand-md bg-body-tertiary">
-      <div class="container-fluid seccion1">
+      <div class="container-fluid section1">
         <a class="navbar-brand" href="#">
           <img class="nav-logo d-inline-block align-text-top" src="./assets/img/Logo_Amazing_Events.png"
             alt="Logo Amazing Events">
@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse nav-options-container" id="navbarNav">
           <ul class="navbar-nav nav-options">
             <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center align-items-center" aria-current="page" href="#">Home</a>
+              <a class="nav-link d-flex justify-content-center align-items-center" aria-current="page" href="./index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex justify-content-center align-items-center"
@@ -42,42 +42,35 @@
               <a class="nav-link d-flex justify-content-center align-items-center" href="./contact.html">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center align-items-center" href="./stats.html">Status</a>
+              <a class="nav-link d-flex justify-content-center align-items-center" href="./stats.html">Stats</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
-    <!--//////////////////// SEGUNDA BARRA DE NAVEGACION ////////////////////-->
-    <div class="seccion2 d-flex justify-content-between align-items-center p-3">
-      <a href="./stats.html"><!-- BOTON ANTERIOR -->
-        <button class="btn-control">
-          <span class="text-white">&lt;</span>
-        </button>
-      </a>
-
-      <div>
-        <h1><b class="text-white">Home</b></h1>
-      </div>
-      <a href="./upcoming_events.html"><!-- BOTON SIGUIENTE -->
-        <button class="btn-control ">
-          <span class="text-white">></span>
-        </button>
-      </a>
-
-    </div>
   </header>
 
 
   <!--//////////////////// CUERPO PRINCIPAL ////////////////////-->
-  <main class="seccion3">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto numquam, saepe, porro nobis expedita corporis ipsum nesciunt odit neque alias dignissimos? Error saepe fugit delectus aliquam. Earum odio deleniti aliquid.</p>
-  </main>
+<main class="section3-details">
+  <div class="details-container d-flex justify-content-evenly align-items-streched m-5 px-3 py-5 border">
+    <div class="details-1 mx-3">
+      <img class="details-img" src="/assets/img/Museum_Tour.jpg" alt="Museum tour">
+    </div>
+    <div class="details-2 border mx-3 p-5 d-flex justify-content-center align-items-center">
+      <div class="text-center px-3">
+        <h1 class="h1-detail my-4">Título</h1>
+        <p>Texto descriptivo</p>
+        <p>Texto descriptivo</p>
+        <p>Texto descriptivo</p>
+      </div>
+    </div>
+  </div>
+</main>
 
 
   <!--//////////////////// FOOTER ////////////////////-->
-  <footer class="seccion4 d-flex justify-content-between">
+  <footer class="section4 d-flex justify-content-between">
     <div class="d-flex justify-content-evenly social-icon-container">
       <div class="social-icon"><a href="https://www.instagram.com" title="Instagram"><img class="icon w-100"
             src="./assets/img/instagram.png" alt="Instagram link"></a></div>
@@ -87,7 +80,7 @@
             src="./assets/img/whatsapp.png" alt="WhatsApp link"></a></div>
     </div>
 
-    <div class="cohort text-white">FE04-TN</div>
+    <div class="cohort text-white mx-3 d-flex align-items-center">FE04-TN</div>
   </footer>
 
   <!--//////////////////// SCRIPTS ////////////////////-->

@@ -16,7 +16,7 @@
   <header>
     <!--//////////////////// PRIMERA BARRA DE NAVEGACIÓN ////////////////////-->
     <nav class="navbar navbar-expand-md bg-body-tertiary">
-      <div class="container-fluid seccion1">
+      <div class="container-fluid section1">
         <a class="navbar-brand" href="#">
           <img class="nav-logo d-inline-block align-text-top" src="./assets/img/Logo_Amazing_Events.png"
             alt="Logo Amazing Events">
@@ -42,7 +42,7 @@
               <a class="nav-link d-flex justify-content-center align-items-center" href="./contact.html">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center align-items-center" href="./stats.html">Status</a>
+              <a class="nav-link d-flex justify-content-center align-items-center" href="./stats.html">Stats</a>
             </li>
           </ul>
         </div>
@@ -50,20 +50,16 @@
     </nav>
 
     <!--//////////////////// SEGUNDA BARRA DE NAVEGACIÓN ////////////////////-->
-    <div class="seccion2 d-flex justify-content-between align-items-center p-3">
-      <a href="./contact.html"><!-- BOTÓN ANTERIOR -->
-        <button class="btn-control">
+    <div class="section2 d-flex justify-content-between align-items-center p-3">
+      <a class="btn-control" href="./contact.html"><!-- BOTÓN ANTERIOR -->
           <span class="text-white">&lt;</span>
-        </button>
       </a>
 
       <div>
         <h1><b class="text-white">Stats</b></h1><!-- TÍTULO PRINCIPAL -->
       </div>
-      <a href="./index.html"><!-- BOTÓN SIGUIENTE -->
-        <button class="btn-control ">
+      <a class="btn-control" href="./index.html"><!-- BOTÓN SIGUIENTE -->
           <span class="text-white">></span>
-        </button>
       </a>
 
     </div>
@@ -71,13 +67,98 @@
 
 
   <!--//////////////////// CUERPO PRINCIPAL ////////////////////-->
-  <main class="seccion3">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto numquam, saepe, porro nobis expedita corporis ipsum nesciunt odit neque alias dignissimos? Error saepe fugit delectus aliquam. Earum odio deleniti aliquid.</p>
+  <main class="section3">
+    <div class="table-container p-2">
+      <h2 class="table_title bg-secondary text-white border border-secondary m-0 mt-3">Events statistics</h2>
+      <table class="table table-bordered border-dark">
+        <thead>
+          <tr>
+            <th class="align-text-top" scope="col">Events with the highest percentage of attendance</th>
+            <th class="align-text-top" scope="col">Events with the lowest percentage of attendance</th>
+            <th class="align-text-top" scope="col">Events with larger capacity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="table_title bg-secondary text-white border border-secondary m-0 mt-4">Upcoming events statistics by category</h2>
+      <table class="table table-bordered border-dark">
+        <thead>
+          <tr>
+            <th class="align-text-top" scope="col">Categories</th>
+            <th class="align-text-top" scope="col">Revenues</th>
+            <th class="align-text-top" scope="col">Percentage of attendance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <h2 class="table_title bg-secondary text-white border border-secondary m-0 mt-4">Past Events statistic by category</h2>
+      <table class="table table-bordered border-dark">
+        <thead>
+          <tr>
+            <th class="align-text-top" scope="col">Categories</th>
+            <th class="align-text-top" scope="col">Revenues</th>
+            <th class="align-text-top" scope="col">Percentage of attendance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </main>
 
 
   <!--//////////////////// FOOTER ////////////////////-->
-  <footer class="seccion4 d-flex justify-content-between">
+  <footer class="section4 d-flex justify-content-between">
     <div class="d-flex justify-content-evenly social-icon-container">
       <div class="social-icon"><a href="https://www.instagram.com" title="Instagram"><img class="icon w-100"
             src="./assets/img/instagram.png" alt="Instagram link"></a></div>
@@ -87,7 +168,7 @@
             src="./assets/img/whatsapp.png" alt="WhatsApp link"></a></div>
     </div>
 
-    <div class="cohort text-white">FE04-TN</div>
+    <div class="cohort text-white mx-3 d-flex align-items-center">FE04-TN</div>
   </footer>
 
   <!--//////////////////// SCRIPTS ////////////////////-->
