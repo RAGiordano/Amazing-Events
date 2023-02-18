@@ -5,15 +5,42 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* ////////////////////TAMAÑOS DE FUENTE MOBILE//////////////////// */
 h1{
     font-size: 2.5em;
 }
+
+h2{/* Títulos tarjetas eventos*/
+    font-size: 2em;
+}
+
+h3{/* Títulos de tablas */
+    font-size: 1.3em;
+}
+
+h4{
+    font-size: 1.2em;
+}
+
+p {
+    font-size: 0.9em;
+}
+
+th{/* Encabezados de tablas */
+    font-size: 0.9em;
+}
+
+td {/* Datos en tablas */
+    font-size: 0.8em;
+}
+
 
 /* ////////////////////SECCIÓN 1//////////////////// */
 .btn-control{
     border-style: none;
     background-color: unset;
-    font-size: 4em;
+    font-size: 3em;
 }
 
 .nav-logo{
@@ -63,7 +90,7 @@ h1{
 }
 
 .cohort{
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 
@@ -171,17 +198,52 @@ td{
 
 /* ////////////ESTILO PARA PANTALLAS MEDIANAS O GRANDES//////////// */
 @media (min-width: 768px) {
+/* ////////////////////TAMAÑOS DE FUENTE MOBILE//////////////////// */
     h1{
         font-size: 3em;
     }
+
+    h2{
+        font-size: 2.2em;
+    }
+
+    h3{/* Títulos de tablas */
+        font-size: 1.56em;
+    }
+
+    h4{
+        font-size: 1.44em;
+    }
+
+    p {
+        font-size: 1.08em;
+    }
+
+    th{/* Encabezados de tablas */
+        font-size: 1.08em;
+    }
+
+    td {/* Datos en tablas */
+        font-size: 0.96em;
+    }
+
+    
     /* ////////////////////SECCIÓN 1//////////////////// */
     .section1{
         height: 100px;
         background-color:gainsboro;
     }
 
+    .btn-control{
+        font-size: 4em;
+    }
+
     .navbar{
         padding: 0;
+    }
+
+    .navbar-brand{
+        padding-left: 1vw;
     }
 
     .nav-logo{
