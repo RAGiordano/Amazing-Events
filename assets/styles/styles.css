@@ -105,6 +105,7 @@ td {/* Datos en tablas */
 .btn-card{
     text-decoration: none;
     box-shadow: 5px 5px 10px grey;
+    min-width: 114px !important;
 }
 
 .cards-container{
@@ -146,7 +147,10 @@ td {/* Datos en tablas */
     max-width: 140px;
 }
 
-
+#name, #email, #message {
+    width: 92vw;
+    max-width: 500px;
+}
 
 .message{
     height: 200px;
