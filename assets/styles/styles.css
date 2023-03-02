@@ -68,7 +68,7 @@ td {/* Datos en tablas */
 
 /* ////////////////////SECCIÓN 3//////////////////// */
 .section3{
-    min-height: calc(100vh - 277px);
+    min-height: calc(100vh - 246px);
 }
 
   
@@ -80,17 +80,17 @@ td {/* Datos en tablas */
 }
 
 .social-icon-container{
-    width: 15vw;
-    min-width: 220px;
+    /* width: 15vw; */
+    width: 200px;
 }
 
 .social-icon{
-    width: 50px;
-    max-width: 10vw;
+    width: 43px;
+    /* max-width: 10vw; */
 }
 
 .cohort{
-    font-size: 1.3em;
+    font-size: 1.6em;
 }
 
 
@@ -133,6 +133,11 @@ td {/* Datos en tablas */
 
 
 /* ////////////////////////////// CONTACT ////////////////////////////// */
+#name, #email, #message {
+    width: 92vw;
+    max-width: 500px;
+}
+
 .submit-button, .btn-card{
     color: white;
     background: #555;
@@ -145,11 +150,6 @@ td {/* Datos en tablas */
     width: 12.4vw;
     min-width: 96px;
     max-width: 140px;
-}
-
-#name, #email, #message {
-    width: 92vw;
-    max-width: 500px;
 }
 
 .message{
@@ -199,10 +199,40 @@ td{
 }
 
 
+/* ////////////ESTILO PARA PANTALLAS MUY ANGOSTAS//////////// */
+@media (max-width: 357px) {
+
+    /* ////////////////////SECCIÓN 4 (FOOTER)//////////////////// */
+    .social-icon-container{
+        width: 180px;
+        max-width: 48vw;
+        height: 20px;
+    }
+    
+    .social-icon{
+        width: 38px;
+        max-width: 12vw;
+    }
+    
+    .cohort{
+        font-size: 7vw;
+        height: 20px;
+        max-width: 48vw;
+        text-align: center;
+        background-color: antiquewhite;
+    }
+    
+    
+
+}
+
+
+
+
 
 /* ////////////ESTILO PARA PANTALLAS MEDIANAS O GRANDES//////////// */
 @media (min-width: 768px) {
-/* ////////////////////TAMAÑOS DE FUENTE MOBILE//////////////////// */
+/* ////////////////////TAMAÑOS DE FUENTE PANTALLAS MEDIANAS O GRANDES//////////////////// */
     h1{
         font-size: 3em;
     }
@@ -292,7 +322,7 @@ td{
 
     /* ////////////////////SECCIÓN 3//////////////////// */
     .section3{
-        min-height: calc(100vh - 318px);
+        min-height: calc(100vh - 316px);
     }
 
     .section3-container{
@@ -300,8 +330,17 @@ td{
     }
 
     /* ////////////////////SECCIÓN 4 (FOOTER)//////////////////// */
+    .social-icon-container{
+        /* width: 15vw; */
+        width: 230px;
+    }
+    
+    .social-icon{
+        width: 48px;    
+    }    
+
     .cohort{
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
 
