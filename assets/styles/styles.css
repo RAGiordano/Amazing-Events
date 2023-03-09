@@ -66,6 +66,9 @@ td {/* Datos en tablas */
     background-color: rgb(217,3,104);
 }
 
+
+
+
 /* ////////////////////SECCIÓN 3//////////////////// */
 .section3{
     min-height: calc(100vh - 246px);
@@ -172,12 +175,13 @@ td{
 
 /* ////////////////////////////// DETAILS ////////////////////////////// */
 .section3-details{
-    min-height: calc(100vh - 238px);
+    min-height: calc(100vh - 188px);
 }
 
 .details-container{
     flex-wrap: wrap;
     border-style: none !important;
+    padding: 50px 0px ;
 }
 
 .details-1{
@@ -219,7 +223,6 @@ td{
         height: 20px;
         max-width: 48vw;
         text-align: center;
-        background-color: antiquewhite;
     }
     
     
@@ -343,7 +346,17 @@ td{
         font-size: 1.8em;
     }
 
+    /* //////////////////// DETAILS //////////////////// */
+/*     .details-container {
+        margin: 50px 5vw ;
+        padding: 50px 0 ;
+    } */
 
+}
+
+
+/* ////////////ESTILO PARA PANTALLAS DONDE ENTREN DOS O MÁS CARDS EN HORIZONTAL//////////// */
+@media (min-width: 852px) {
     /* //////////// HOME - UPCOMING EVENTS - PAST EVENTS //////////// */
     .form-sections-container{
         width: 100%;
@@ -367,15 +380,19 @@ td{
         min-height: 300px;
     }
 
-    /* ////////////////////////////// DETAILS ////////////////////////////// */
-     .details-container{
-        border-style: solid !important;
-    }
-
-    .details-1, .details-2{
-        min-width: 400px;
-    }
 
 }
 
-
+/* ////////////ESTILO PARA PANTALLAS DONDE ENTRE DETAILS EN FILA //////////// */
+@media (min-width: 1011px) {
+        /* ////////////////////////////// DETAILS ////////////////////////////// */
+        .details-container{
+            border-style: solid !important;
+            margin: 50px 5vw ;
+            padding: 50px 0 ;
+        }
+    
+        .details-1, .details-2{
+            min-width: 400px;
+        }
+}
