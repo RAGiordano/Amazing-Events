@@ -52,7 +52,7 @@ function createHtmlDetails(evento) {
     <p><b>Capacity:</b> ${evento.capacity}</p>
     <p><b>` + (evento.assistance != undefined ? `Assistance:</b> ${evento.assistance}`: `Estimate:</b> ${evento.estimate}`) + `</p>
     <p><b>Price:</b> $ ${evento.price}</p>
-    <div class="d-flex justify-content-center text-center">
+    <div class="d-flex justify-content-center">
       <a class="nav-link d-flex justify-content-center align-items-center mt-3" href="javascript: history.go(-1)">Return</a>
     </div>
   </div>
