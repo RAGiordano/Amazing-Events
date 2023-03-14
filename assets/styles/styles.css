@@ -29,6 +29,7 @@ p {
 
 th{/* Encabezados de tablas */
     font-size: 0.9em;
+    background-color:gainsboro !important;
 }
 
 td {/* Datos en tablas */
@@ -74,7 +75,29 @@ td {/* Datos en tablas */
     min-height: calc(100vh - 246px);
 }
 
-  
+
+.pink-button{
+    color: white;
+    background: rgb(217,3,104);
+    font-size: 1em;
+    border: 2px solid rgb(217,3,104);
+    padding: 14px 3px 14px 3px;
+    text-align: center;
+    transition: all .32s cubic-bezier(0, 0.55, 0.45, 1);
+    height:52px;
+    width: 12.4vw;
+    min-width: 96px;
+    max-width: 140px;
+    will-change: transform;
+    text-decoration: none;
+}
+
+.pink-button:hover{
+    color: white;
+    transform: scale(1.1);
+    background: rgb(217,3,104);
+  }
+
 
 /* ////////////////////SECCIÓN 4 (FOOTER)//////////////////// */
 .section4{
@@ -83,19 +106,16 @@ td {/* Datos en tablas */
 }
 
 .social-icon-container{
-    /* width: 15vw; */
     width: 200px;
 }
 
 .social-icon{
     width: 43px;
-    /* max-width: 10vw; */
 }
 
 .cohort{
     font-size: 1.6em;
 }
-
 
 
 
@@ -179,6 +199,7 @@ td{
 }
 
 .details-container{
+    width: 100%;
     flex-wrap: wrap;
     border-style: none !important;
     padding: 50px 0px ;
@@ -225,8 +246,6 @@ td{
         text-align: center;
     }
     
-    
-
 }
 
 
@@ -334,7 +353,6 @@ td{
 
     /* ////////////////////SECCIÓN 4 (FOOTER)//////////////////// */
     .social-icon-container{
-        /* width: 15vw; */
         width: 230px;
     }
     
@@ -346,12 +364,6 @@ td{
         font-size: 1.8em;
     }
 
-    /* //////////////////// DETAILS //////////////////// */
-/*     .details-container {
-        margin: 50px 5vw ;
-        padding: 50px 0 ;
-    } */
-
 }
 
 
@@ -361,7 +373,6 @@ td{
     .form-sections-container{
         width: 100%;
     }
-
 
     .cards-container{
         width: 100%;
@@ -379,7 +390,6 @@ td{
     .card-img{
         min-height: 300px;
     }
-
 
 }
 
