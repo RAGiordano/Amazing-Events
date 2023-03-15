@@ -1,6 +1,7 @@
+let pastCategories = []; /* ARRAY CON CATEGORÍAS DE EVENTOS PASADOS */
+let upcomingCategories = []; /* ARRAY CON CATEGORÍAS DE EVENTOS FUTUROS */
+
 obtenerDatos().then(data => {
-    let pastCategories = []; /* ARRAY CON CATEGORÍAS DE EVENTOS PASADOS */
-    let upcomingCategories = []; /* ARRAY CON CATEGORÍAS DE EVENTOS FUTUROS */
     let pastStats = []; /* ARRAY DE OBJETOS QUE TIENEN INFORMACIÓN ESTADÍSTICA POR CATEGORÍA */
     let upcomingStats = []; /* ARRAY DE OBJETOS QUE TIENEN INFORMACIÓN ESTADÍSTICA POR CATEGORÍA */
     let mayorPorcentajeAsistencia = 0; 
@@ -22,43 +23,9 @@ obtenerDatos().then(data => {
         }
 
         if (event.date < data.currentDate) {
-            if (!pastCategories.includes(event.category)){ /* SI LA CATEGORÍA NO ESTÁ EN EL ARRAY DE ESTADÍSTICAS POR CATEGORÍA, LA AGREGA CON LOS VALORES INICIALES EN SUS ATRIBUTOS */
-                    let stats = {
-                    category : event.category,
-                    earnings : (event.assistance != undefined ? event.assistance * event.price : event.estimate * event.price),
-                    assistance : (event.assistance != undefined ? event.assistance : event.estimate),
-                    capacity : event.capacity
-                };
-                pastCategories.push(event.category);
-                pastStats.push(stats); /* AGREGA DATOS ESTADÍSTICOS DE NUEVA CATEGORÍA EN ARRAY */
-            } else {
-                pastStats.forEach(pastCategoriesStats => {
-                    if (pastCategoriesStats.category == event.category){
-                        pastCategoriesStats.earnings += (event.assistance != undefined ? event.assistance * event.price : event.estimate * event.price); /* ACUMULA GANANCIAS */
-                        pastCategoriesStats.assistance += (event.assistance != undefined ? event.assistance : event.estimate); /* ACUMULA ASISTENCIA */
-                        pastCategoriesStats.capacity += event.capacity; /* ACUMULA CAPACIDAD */
-                    }
-                });
-            }
+            pastStats = fillCategoryStatsArray(pastStats, event, "past"); /* ACTUALIZA EL ARRAY DE ESTADÍSTICAS DE LA CATEGORÍA Y EL ARRAY DE CATEGORÍAS */
         } else {
-            if (!upcomingCategories.includes(event.category)){ /* SI LA CATEGORÍA NO ESTÁ EN EL ARRAY DE ESTADÍSTICAS POR CATEGORÍA, LA AGREGA CON LOS VALORES INICIALES EN SUS ATRIBUTOS */
-                    stats = {
-                    category : event.category,
-                    earnings : (event.assistance != undefined ? event.assistance * event.price : event.estimate * event.price),
-                    assistance : (event.assistance != undefined ? event.assistance : event.estimate),
-                    capacity : event.capacity
-                };
-                upcomingCategories.push(event.category);
-                upcomingStats.push(stats); /* AGREGA DATOS ESTADÍSTICOS DE NUEVA CATEGORÍA EN ARRAY */
-            } else {
-                upcomingStats.forEach(upcomingCategoriesStats => {
-                    if (upcomingCategoriesStats.category == event.category){
-                        upcomingCategoriesStats.earnings += (event.assistance != undefined ? event.assistance * event.price : event.estimate * event.price); /* ACUMULA GANANCIAS */
-                        upcomingCategoriesStats.assistance += (event.assistance != undefined ? event.assistance : event.estimate); /* ACUMULA ASISTENCIA */
-                        upcomingCategoriesStats.capacity += event.capacity; /* ACUMULA CAPACIDAD */
-                    }
-                });
-            }
+            upcomingStats = fillCategoryStatsArray(upcomingStats, event, "upcoming") /* ACTUALIZA EL ARRAY DE ESTADÍSTICAS DE LA CATEGORÍA Y EL ARRAY DE CATEGORÍAS */
         }
         index ++;
     }
@@ -68,36 +35,51 @@ obtenerDatos().then(data => {
 });
 
 
+function fillCategoryStatsArray(categoryStats, event, type){ /* ACTUALIZA EL ARRAY DE CATEGORÍAS Y DEVUELVE EL ARRAY DE ESTADÍSTICAS DE LA CATEGORÍA ACTUALIZADO CON LOS DATOS DEL EVENTO*/
+    let categories = (type == "past" ? pastCategories : upcomingCategories);
+    if (!categories.includes(event.category)){ /* SI LA CATEGORÍA NO ESTÁ EN EL ARRAY DE ESTADÍSTICAS POR CATEGORÍA, LA AGREGA CON LOS VALORES INICIALES EN SUS ATRIBUTOS */
+    let stats = {
+        category : event.category,
+        earnings : (event.assistance != undefined ? event.assistance * event.price : event.estimate * event.price),
+        assistance : (event.assistance != undefined ? event.assistance : event.estimate),
+        capacity : event.capacity
+    };
+    (type == "past" ? pastCategories.push(event.category) : upcomingCategories.push(event.category));
+    categoryStats.push(stats); /* AGREGA DATOS ESTADÍSTICOS DE NUEVA CATEGORÍA EN ARRAY */
+    } else {
+        categoryStats.forEach(catStats => {
+            if (catStats.category == event.category){
+                catStats.earnings += (event.assistance != undefined ? event.assistance * event.price : event.estimate * event.price); /* ACUMULA GANANCIAS */
+                catStats.assistance += (event.assistance != undefined ? event.assistance : event.estimate); /* ACUMULA ASISTENCIA */
+                catStats.capacity += event.capacity; /* ACUMULA CAPACIDAD */
+            }
+        });
+    }
+    return categoryStats;
+}
+
+
 function createGeneralStats(highestPercentageAttendance, lowestPercentageAttendance, largerCapacity, events){
     /* VARIABLES QUE ALMACENAN CADENAS DE TEXTO CON NOMBRES DE EVENTOS QUE CUMPLEN LAS CONDICIONES*/
-    let highestAttendanceEventstxt = "";
-    let lowestAttendanceEventstxt = "";
-    let largerCapacitytxt = "";
+    let highestAttendanceEventstxt = "<ul>";
+    let lowestAttendanceEventstxt = "<ul>";
+    let largerCapacitytxt = "<ul>";
 
     /* FILTROS DE EVENTOS Y ARMA CADENA DE TEXTO CON NOMBRES DE EVENTOS QUE CUMPLEN LAS CONDICIONES */
     events.filter(event => event.attendancePercentage == highestPercentageAttendance).forEach(event => {
-       if (highestAttendanceEventstxt != ""){
-            highestAttendanceEventstxt += " - ";
-       }
-       highestAttendanceEventstxt += event.name ;
+       highestAttendanceEventstxt += `<li>${event.name}</li>`;
     });
     events.filter(event => event.attendancePercentage == lowestPercentageAttendance).forEach(event => {
-        if (lowestAttendanceEventstxt != ""){
-            lowestAttendanceEventstxt += " - ";
-        }
-        lowestAttendanceEventstxt += event.name ;
+        lowestAttendanceEventstxt += `<li>${event.name}</li>`;
      });
      events.filter(event => event.capacity == largerCapacity).forEach(event => {
-        if (largerCapacitytxt != ""){
-            largerCapacitytxt += " - ";
-        }
-        largerCapacitytxt += event.name ;
+        largerCapacitytxt += `<li>${event.name}</li>`;
      });
 
     return `<tr>
-        <td>${highestAttendanceEventstxt}.<br><br><b>Percentage of attendance:</b> ${highestPercentageAttendance}%</td>
-        <td>${lowestAttendanceEventstxt}.<br><br><b>Percentage of attendance:</b> ${lowestPercentageAttendance}%</td>
-        <td>${largerCapacitytxt}.<br><br><b>Capacity:</b> ${largerCapacity}</td>
+        <td>${highestAttendanceEventstxt}</ul><b>Percentage of attendance:</b> ${highestPercentageAttendance}%</td>
+        <td>${lowestAttendanceEventstxt}</ul><b>Percentage of attendance:</b> ${lowestPercentageAttendance}%</td>
+        <td>${largerCapacitytxt}</ul><b>Capacity:</b> ${largerCapacity}</td>
     </tr>`;
 }
 
