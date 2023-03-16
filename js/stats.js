@@ -28,6 +28,7 @@ obtenerDatos().then(data => {
         } else {
             upcomingStats = fillCategoryStatsArray(upcomingStats, event, "upcoming") /* ACTUALIZA EL ARRAY DE ESTADÍSTICAS DE LA CATEGORÍA Y EL ARRAY DE CATEGORÍAS */
         }
+        
         index ++;
     }
     document.getElementById('general-stats').innerHTML = createGeneralStats(mayorPorcentajeAsistencia, menorPorcentajeAsistencia, mayorCapacidad, data.events, data.currentDate);

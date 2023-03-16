@@ -1,13 +1,3 @@
-const { createApp } = Vue
-
-  createApp({
-    data() {
-      return {
-        message: 'Hello Vue!'
-      }
-    }
-  }).mount('#app')
-
 let htmlCards = ""; /* VARIABLE PARA ALMACENAR EL CÓDIGO HTML DE LAS TARJETAS */
 let htmlCategories = ""; /* VARIABLE PARA ALMACENAR EL CÓDIGO HTML DE LAS CATEGORÍAS */
 let allCategories = []; /* ARREGLO PARA ALMACENAR TODAS LAS CATEGORÍAS */
