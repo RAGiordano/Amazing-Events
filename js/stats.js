@@ -12,24 +12,25 @@ obtenerDatos().then(data => {
     for (let event of data.events){
         let porcentajeAsistencia = (event.assistance != undefined ? event.assistance / event.capacity * 100 : event.estimate / event.capacity * 100);
         data.events[index].attendancePercentage = porcentajeAsistencia; /* AGREGA EL ATRIBUTO DE PORCENTAJE DE ASISTENCIA AL VECTOR DE EVENTOS */
-        if (porcentajeAsistencia > mayorPorcentajeAsistencia){ 
-            mayorPorcentajeAsistencia = porcentajeAsistencia; /* GUARDA EL MAYOR PORCENTAJE DE ASISTENCIA */
-        }
-        if (porcentajeAsistencia < menorPorcentajeAsistencia){
-            menorPorcentajeAsistencia = porcentajeAsistencia; /* GUARDA EL MENOR PORCENTAJE DE ASISTENCIA */
-        }
         if (event.capacity > mayorCapacidad){
             mayorCapacidad = event.capacity; /* GUARDA LA MAYOR CAPACIDAD */
         }
 
         if (event.date < data.currentDate) {
             pastStats = fillCategoryStatsArray(pastStats, event, "past"); /* ACTUALIZA EL ARRAY DE ESTADÍSTICAS DE LA CATEGORÍA Y EL ARRAY DE CATEGORÍAS */
+
+            if (porcentajeAsistencia > mayorPorcentajeAsistencia){ 
+                mayorPorcentajeAsistencia = porcentajeAsistencia; /* GUARDA EL MAYOR PORCENTAJE DE ASISTENCIA DE EVENTOS PASADOS*/
+            }
+            if (porcentajeAsistencia < menorPorcentajeAsistencia){
+                menorPorcentajeAsistencia = porcentajeAsistencia; /* GUARDA EL MENOR PORCENTAJE DE ASISTENCIA DE EVENTOS PASADOS*/
+            }
         } else {
             upcomingStats = fillCategoryStatsArray(upcomingStats, event, "upcoming") /* ACTUALIZA EL ARRAY DE ESTADÍSTICAS DE LA CATEGORÍA Y EL ARRAY DE CATEGORÍAS */
         }
         index ++;
     }
-    document.getElementById('general-stats').innerHTML = createGeneralStats(mayorPorcentajeAsistencia, menorPorcentajeAsistencia, mayorCapacidad, data.events);
+    document.getElementById('general-stats').innerHTML = createGeneralStats(mayorPorcentajeAsistencia, menorPorcentajeAsistencia, mayorCapacidad, data.events, data.currentDate);
     document.getElementById('past-stats').innerHTML = createCategoriesStats(pastStats);
     document.getElementById('upcoming-stats').innerHTML = createCategoriesStats(upcomingStats);
 });
@@ -59,17 +60,18 @@ function fillCategoryStatsArray(categoryStats, event, type){ /* ACTUALIZA EL ARR
 }
 
 
-function createGeneralStats(highestPercentageAttendance, lowestPercentageAttendance, largerCapacity, events){
+function createGeneralStats(highestPercentageAttendance, lowestPercentageAttendance, largerCapacity, events, currentDate){ /* GENERA Y RETORNA EL HTML DE LAS ESTADÍSTICAS GENERALES */
     /* VARIABLES QUE ALMACENAN CADENAS DE TEXTO CON NOMBRES DE EVENTOS QUE CUMPLEN LAS CONDICIONES*/
     let highestAttendanceEventstxt = "<ul>";
     let lowestAttendanceEventstxt = "<ul>";
     let largerCapacitytxt = "<ul>";
 
-    /* FILTROS DE EVENTOS Y ARMA CADENA DE TEXTO CON NOMBRES DE EVENTOS QUE CUMPLEN LAS CONDICIONES */
-    events.filter(event => event.attendancePercentage == highestPercentageAttendance).forEach(event => {
+    /* FILTROS DE EVENTOS Y ARMADO DE HTML CON LISTAS DE NOMBRES DE EVENTOS QUE CUMPLEN LAS CONDICIONES */
+    events.filter(event => event.date < currentDate && event.attendancePercentage == highestPercentageAttendance).forEach(event => {
        highestAttendanceEventstxt += `<li>${event.name}</li>`;
     });
-    events.filter(event => event.attendancePercentage == lowestPercentageAttendance).forEach(event => {
+    console.log(highestPercentageAttendance);
+    events.filter(event => event.date < currentDate && event.attendancePercentage == lowestPercentageAttendance).forEach(event => {
         lowestAttendanceEventstxt += `<li>${event.name}</li>`;
      });
      events.filter(event => event.capacity == largerCapacity).forEach(event => {
@@ -77,14 +79,14 @@ function createGeneralStats(highestPercentageAttendance, lowestPercentageAttenda
      });
 
     return `<tr>
-        <td>${highestAttendanceEventstxt}</ul><b>Percentage of attendance:</b> ${highestPercentageAttendance}%</td>
-        <td>${lowestAttendanceEventstxt}</ul><b>Percentage of attendance:</b> ${lowestPercentageAttendance}%</td>
+        <td>${highestAttendanceEventstxt}</ul><b>Percentage of attendance:</b> ${Math.round(highestPercentageAttendance * 100) / 100}%</td>
+        <td>${lowestAttendanceEventstxt}</ul><b>Percentage of attendance:</b> ${Math.round(lowestPercentageAttendance * 100) / 100}%</td>
         <td>${largerCapacitytxt}</ul><b>Capacity:</b> ${largerCapacity}</td>
     </tr>`;
 }
 
 
-function createCategoriesStats(categories){
+function createCategoriesStats(categories){ /* GENERA Y RETORNA EL HTML DE LAS ESTADÍSTICAS POR CATEGORÍAS */
     let html = "";
     categories.forEach(category => {
         html += `<tr>
