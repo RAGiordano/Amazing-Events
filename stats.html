@@ -13,131 +13,161 @@
 </head>
 
 <body>
-  <header>
-    <!--//////////////////// PRIMERA BARRA DE NAVEGACIÓN ////////////////////-->
-    <nav class="navbar navbar-expand-md bg-body-tertiary">
-      <div class="container-fluid section1">
-        <a class="navbar-brand" href="#">
-          <img class="nav-logo d-inline-block align-text-top" src="./assets/img/Logo_Amazing_Events.png"
-            alt="Logo Amazing Events">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse nav-options-container" id="navbarNav">
-          <ul class="navbar-nav nav-options">
-            <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center align-items-center" aria-current="page" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center align-items-center"
-                href="./upcoming_events.html">Upcoming Events</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center align-items-center"
-                href="./past_events.html">Past Events</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center align-items-center" href="./contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center align-items-center" href="./stats.html">Stats</a>
-            </li>
-          </ul>
+  <div id="app"> <!-- ABRO CONTENEDOR DE VUE.JS -->
+    <header>
+      <!--//////////////////// PRIMERA BARRA DE NAVEGACIÓN ////////////////////-->
+      <nav class="navbar navbar-expand-md bg-body-tertiary">
+        <div class="container-fluid section1">
+          <a class="navbar-brand" href="#">
+            <img class="nav-logo d-inline-block align-text-top" src="./assets/img/Logo_Amazing_Events.png"
+              alt="Logo Amazing Events">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse nav-options-container" id="navbarNav">
+            <ul class="navbar-nav nav-options">
+              <li class="nav-item">
+                <a class="nav-link d-flex justify-content-center align-items-center" aria-current="page"
+                  href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex justify-content-center align-items-center"
+                  href="./upcoming_events.html">Upcoming Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex justify-content-center align-items-center" href="./past_events.html">Past
+                  Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex justify-content-center align-items-center" href="./contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex justify-content-center align-items-center" href="./stats.html">Stats</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-    <!--//////////////////// SEGUNDA BARRA DE NAVEGACIÓN ////////////////////-->
-    <div class="section2 d-flex justify-content-between align-items-center p-3">
-      <a class="btn-control" href="./contact.html"><!-- BOTÓN ANTERIOR -->
+      <!--//////////////////// SEGUNDA BARRA DE NAVEGACIÓN ////////////////////-->
+      <div class="section2 d-flex justify-content-between align-items-center p-3">
+        <a class="btn-control" href="./contact.html"><!-- BOTÓN ANTERIOR -->
           <span class="text-white">&lt;</span>
-      </a>
+        </a>
 
-      <div>
-        <h1><b class="text-white">Stats</b></h1><!-- TÍTULO PRINCIPAL -->
-      </div>
-      <a class="btn-control" href="./index.html"><!-- BOTÓN SIGUIENTE -->
+        <div>
+          <h1><b class="text-white">Stats</b></h1><!-- TÍTULO PRINCIPAL -->
+        </div>
+        <a class="btn-control" href="./index.html"><!-- BOTÓN SIGUIENTE -->
           <span class="text-white">></span>
-      </a>
+        </a>
 
-    </div>
-  </header>
-
-
-  <!--//////////////////// CUERPO PRINCIPAL ////////////////////-->
-  <main class="section3">
-    <div class="table-container p-2">
-      <h3 class="table_title bg-secondary text-white border border-secondary m-0 mt-3 ps-2 py-1">Events statistics</h3>
-      <table class="table table-bordered border-dark">
-        <thead>
-          <tr>
-            <th class="align-text-top" scope="col">Events with the highest percentage of attendance</th>
-            <th class="align-text-top" scope="col">Events with the lowest percentage of attendance</th>
-            <th class="align-text-top" scope="col">Events with larger capacity</th>
-          </tr>
-        </thead>
-        <tbody id="general-stats">
-
-          <!-- EVENTS TR INSERTIONS -->
-
-        </tbody>
-      </table>
-
-      <h3 class="table_title bg-secondary text-white border border-secondary m-0 mt-4 ps-2 py-1">Upcoming events statistics by category</h3>
-      <table class="table table-bordered border-dark">
-        <thead>
-          <tr>
-            <th class="align-text-top" scope="col">Categories</th>
-            <th class="align-text-top" scope="col">Revenues</th>
-            <th class="align-text-top" scope="col">Percentage of attendance</th>
-          </tr>
-        </thead>
-        <tbody id="upcoming-stats">
-          
-          <!-- UPCOMING EVENTS TR INSERTIONS -->
-
-        </tbody>
-      </table>
+      </div>
+    </header>
 
 
-      <h3 class="table_title bg-secondary text-white border border-secondary m-0 mt-4 ps-2 py-1">Past Events statistic by category</h3>
-      <table class="table table-bordered border-dark">
-        <thead>
-          <tr>
-            <th class="align-text-top" scope="col">Categories</th>
-            <th class="align-text-top" scope="col">Revenues</th>
-            <th class="align-text-top" scope="col">Percentage of attendance</th>
-          </tr>
-        </thead>
-        <tbody id="past-stats">
-
-          <!-- PAST EVENTS TR INSERTIONS -->
-
-        </tbody>
-      </table>
-    </div>
-  </main>
+    <!--//////////////////// CUERPO PRINCIPAL ////////////////////-->
+    <main class="section3">
+      <div class="table-container p-2">
+        <h3 class="table_title bg-secondary text-white border border-secondary m-0 mt-3 ps-2 py-1">Events statistics
+        </h3>
+        <table class="table table-bordered border-dark">
+          <thead>
+            <tr>
+              <th class="align-text-top" scope="col">Events with the highest percentage of attendance</th>
+              <th class="align-text-top" scope="col">Events with the lowest percentage of attendance</th>
+              <th class="align-text-top" scope="col">Events with larger capacity</th>
+            </tr>
+          </thead>
+          <tbody id="general-stats">
 
 
-  <!--//////////////////// FOOTER ////////////////////-->
-  <footer class="section4 d-flex justify-content-between ">
-    <div class="d-flex justify-content-evenly social-icon-container">
-      <div class="social-icon d-flex align-items-center"><a href="https://www.instagram.com" title="Instagram"><img class="icon w-100"
-            src="./assets/img/instagram.png" alt="Instagram link"></a></div>
-      <div class="social-icon d-flex align-items-center"><a href="https://www.facebook.com" title="Facebook"><img class="icon w-100"
-            src="./assets/img/facebook.png" alt="Facebook link"></a></div>
-      <div class="social-icon d-flex align-items-center"><a href="https://www.whatsapp.com" title="WhatsApp"><img class="icon w-100"
-            src="./assets/img/whatsapp.png" alt="WhatsApp link"></a></div>
-    </div>
+            <!-- EVENTS TR INSERTIONS -->
+            <tr>
+              <td><ul><li v-for="event of highestAttendanceEvents">{{event.name}}</li></ul><b>Percentage of attendance:</b> {{Math.round(generalStats.highestPercentageAttendance * 100) / 100}}%</td>
+              <td><ul><li v-for="event of lowestAttendanceEvents">{{event.name}}</li></ul><b>Percentage of attendance:</b> {{Math.round(generalStats.lowestPercentageAttendance * 100) / 100}}%</td>
+              <td><ul><li v-for="event of largerCapacityEvents">{{event.name}}</li></ul><b>Capacity:</b> {{generalStats.largerCapacity}}</td>
+            </tr>
 
-    <div class="cohort text-white mx-3 d-flex justify-content-center align-text-center text">FE04-TN</div>
-  </footer>
+          </tbody>
+        </table>
+
+        <h3 class="table_title bg-secondary text-white border border-secondary m-0 mt-4 ps-2 py-1">Upcoming events
+          statistics by category</h3>
+        <table class="table table-bordered border-dark">
+          <thead>
+            <tr>
+              <th class="align-text-top" scope="col">Categories</th>
+              <th class="align-text-top" scope="col">Revenues</th>
+              <th class="align-text-top" scope="col">Percentage of attendance</th>
+            </tr>
+          </thead>
+          <tbody id="upcoming-stats">
+
+            <!-- UPCOMING EVENTS TR INSERTIONS -->
+            <tr v-for="category of upcomingCategoryStats">
+              <td>{{category.category}}</td>
+              <td>$ {{category.earnings}}</td>
+              <td> {{Math.round(category.assistance / category.capacity * 10000) / 100}} %</td>
+            </tr>
+
+          </tbody>
+        </table>
+        
+        <h3 class="table_title bg-secondary text-white border border-secondary m-0 mt-4 ps-2 py-1">Past Events statistic
+          by category</h3>
+        <table class="table table-bordered border-dark">
+          <thead>
+            <tr>
+              <th class="align-text-top" scope="col">Categories</th>
+              <th class="align-text-top" scope="col">Revenues</th>
+              <th class="align-text-top" scope="col">Percentage of attendance</th>
+            </tr>
+          </thead>
+          <tbody id="past-stats">
+
+            <!-- PAST EVENTS TR INSERTIONS -->
+            <tr v-for="category of pastCategoryStats">
+              <td>{{category.category}}</td>
+              <td>$ {{category.earnings}}</td>
+              <td> {{Math.round(category.assistance / category.capacity * 10000) / 100}} %</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+
+    <!--//////////////////// FOOTER ////////////////////-->
+    <footer class="section4 d-flex justify-content-between ">
+      <div class="d-flex justify-content-evenly social-icon-container">
+        <div class="social-icon d-flex align-items-center"><a href="https://www.instagram.com" title="Instagram"><img
+              class="icon w-100" src="./assets/img/instagram.png" alt="Instagram link"></a></div>
+        <div class="social-icon d-flex align-items-center"><a href="https://www.facebook.com" title="Facebook"><img
+              class="icon w-100" src="./assets/img/facebook.png" alt="Facebook link"></a></div>
+        <div class="social-icon d-flex align-items-center"><a href="https://www.whatsapp.com" title="WhatsApp"><img
+              class="icon w-100" src="./assets/img/whatsapp.png" alt="WhatsApp link"></a></div>
+      </div>
+
+      <div class="cohort text-white mx-3 d-flex justify-content-center align-text-center text">FE04-TN</div>
+    </footer>
+
+    <!--//////////////////// MÉTODOS ////////////////////-->
+    {{calculateStats}}
+
+
+
+
+  </div> <!-- CIERRO CONTENEDOR DE VUE.JS -->
 
   <!--//////////////////// SCRIPTS ////////////////////-->
-  <script src="./js/shared.js"></script>
-  <script src="./js/stats.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./js/main.js"></script>
+  <!-- <script src="./js/shared.js"></script>
+  <script src="./js/home.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>

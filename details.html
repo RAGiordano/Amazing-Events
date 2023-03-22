@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,73 +14,103 @@
 </head>
 
 <body>
-  <header>
-    <!--//////////////////// PRIMERA BARRA DE NAVEGACIÓN ////////////////////-->
-    <nav class="navbar navbar-expand-md bg-body-tertiary">
-      <div class="container-fluid section1">
-        <a class="navbar-brand" href="#">
-          <img class="nav-logo d-inline-block align-text-top" src="./assets/img/Logo_Amazing_Events.png"
-            alt="Logo Amazing Events">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse nav-options-container" id="navbarNav">
-          <ul class="navbar-nav nav-options">
-            <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center align-items-center" aria-current="page" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center align-items-center"
-                href="./upcoming_events.html">Upcoming Events</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center align-items-center"
-                href="./upcoming_past_events.html">Past Events</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center align-items-center" href="./contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex justify-content-center align-items-center" href="./stats.html">Stats</a>
-            </li>
-          </ul>
+  <div id="app"> <!-- ABRO CONTENEDOR DE VUE.JS -->
+    
+
+    <header>
+      <!--//////////////////// PRIMERA BARRA DE NAVEGACIÓN ////////////////////-->
+      <nav class="navbar navbar-expand-md bg-body-tertiary">
+        <div class="container-fluid section1">
+          <a class="navbar-brand" href="#">
+            <img class="nav-logo d-inline-block align-text-top" src="./assets/img/Logo_Amazing_Events.png"
+              alt="Logo Amazing Events">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse nav-options-container" id="navbarNav">
+            <ul class="navbar-nav nav-options">
+              <li class="nav-item">
+                <a @click="reloadPage('Home')" class="nav-link d-flex justify-content-center align-items-center"
+                  aria-current="page" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a @click="reloadPage('Upcoming Events')"
+                  class="nav-link d-flex justify-content-center align-items-center" href="./index.html">Upcoming
+                  Events</a>
+              </li>
+              <li class="nav-item">
+                <a @click="reloadPage('Past Events')" class="nav-link d-flex justify-content-center align-items-center"
+                  href="./index.html">Past Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex justify-content-center align-items-center" href="./contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex justify-content-center align-items-center" href="./stats.html">Stats</a>
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
+    </header>
+
+
+    <!--//////////////////// CUERPO PRINCIPAL ////////////////////-->
+    <main class="section3-details d-flex align-items-center">
+      <div class="details-container d-flex justify-content-evenly align-items-streched border" id="details-container">
+
+
+        <!-- DETAILS INSERTION -->
+        <div class="details-1 mx-3">
+          <img class="details-img" :src="detailEvent.image" :alt="detailEvent.name">
+        </div>
+        <div class="details-2 border mx-3 p-5">
+          <div class="text-center px-3 justify-content-center">
+            <h1 class="h1-detail my-4">{{detailEvent.name}}</h1>
+            <p><b>Date:</b> {{detailEvent.date}}</p>
+            <p><b>Description:</b> {{detailEvent.description}}</p>
+            <p><b>Category:</b> {{detailEvent.category}}</p>
+            <p><b>Place:</b> {{detailEvent.place}}</p>
+            <p><b>Capacity:</b> {{detailEvent.capacity}}</p>
+            <p><b>{{detailEvent.assistanceType}}:</b> {{detailEvent.assistanceNumber}}</p>
+            <p><b>Price:</b> $ {{detailEvent.price}}</p>
+            <div class="d-flex justify-content-center">
+              <a class="pink-button d-flex justify-content-center align-items-center mt-3"
+                href="javascript: history.go(-1)">Return</a>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </nav>
-  </header>
+    </main>
 
 
-  <!--//////////////////// CUERPO PRINCIPAL ////////////////////-->
-<main class="section3-details d-flex align-items-center">
-  <div class="details-container d-flex justify-content-evenly align-items-streched border" id="details-container">
+    <!--//////////////////// FOOTER ////////////////////-->
+    <footer class="section4 d-flex justify-content-between">
+      <div class="d-flex justify-content-evenly social-icon-container">
+        <div class="social-icon"><a href="https://www.instagram.com" title="Instagram"><img class="icon w-100"
+              src="./assets/img/instagram.png" alt="Instagram link"></a></div>
+        <div class="social-icon"><a href="https://www.facebook.com" title="Facebook"><img class="icon w-100"
+              src="./assets/img/facebook.png" alt="Facebook link"></a></div>
+        <div class="social-icon"><a href="https://www.whatsapp.com" title="WhatsApp"><img class="icon w-100"
+              src="./assets/img/whatsapp.png" alt="WhatsApp link"></a></div>
+      </div>
+
+      <div class="cohort text-white mx-3 d-flex align-items-center">FE04-TN</div>
+    </footer>
 
 
-<!-- DETAILS INSERTION -->
 
+    <!--//////////////////// MÉTODOS ////////////////////-->
+    
 
-  </div>
-</main>
-
-
-  <!--//////////////////// FOOTER ////////////////////-->
-  <footer class="section4 d-flex justify-content-between">
-    <div class="d-flex justify-content-evenly social-icon-container">
-      <div class="social-icon"><a href="https://www.instagram.com" title="Instagram"><img class="icon w-100"
-            src="./assets/img/instagram.png" alt="Instagram link"></a></div>
-      <div class="social-icon"><a href="https://www.facebook.com" title="Facebook"><img class="icon w-100"
-            src="./assets/img/facebook.png" alt="Facebook link"></a></div>
-      <div class="social-icon"><a href="https://www.whatsapp.com" title="WhatsApp"><img class="icon w-100"
-            src="./assets/img/whatsapp.png" alt="WhatsApp link"></a></div>
-    </div>
-
-    <div class="cohort text-white mx-3 d-flex align-items-center">FE04-TN</div>
-  </footer>
+  </div> <!-- CIERRO CONTENEDOR DE VUE.JS -->
 
   <!--//////////////////// SCRIPTS ////////////////////-->
-  <script src="./js/shared.js"></script>
-  <script src="./js/details.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
